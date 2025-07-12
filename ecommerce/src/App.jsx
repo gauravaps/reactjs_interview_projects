@@ -8,11 +8,19 @@ import Drinks from '../pages/categories/Drinks'
 import Sweets from '../pages/categories/Sweets'
 import Home from '../pages/Home'
 import Cart from '../AddToCart/Cart'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const App = () => {
   return (       
     <>
+          {/* add ToastContainer */}
+
+       <ToastContainer position="top-center" autoClose={2000} />
+
+
     <Routes>
     <Route  path="/" element={<Layout/>}>
     <Route path='/' element={<Home/>} />

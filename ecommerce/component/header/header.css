@@ -2,6 +2,7 @@
 .header {
   background-color: white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  
 }
 
 .header-container {
@@ -232,3 +233,17 @@
   font-size: 14px;
 }
 
+
+
+
+.mobile-cart {
+  position: absolute;
+  top: 16px;
+  right: 60px; /* hamburger se thoda distance */
+}
+
+@media (min-width: 1024px) {
+  .mobile-cart {
+    display: none;
+  }
+}

@@ -19,3 +19,10 @@
   gap: 20px;
 }
   
+
+.no-product {
+  text-align: center;
+  font-size: 18px;
+  color: #ef4444; /* red-500 */
+  margin-top: 20px;
+}

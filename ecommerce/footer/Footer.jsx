@@ -2,24 +2,38 @@ import React from 'react';
 import './Footer.css';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { MdEmail, MdPhone, MdLanguage } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setSearchQuery } from '../reduxToolkit/searchSlice';
 
 const Footer = () => {
+  const dispatch = useDispatch();
+
+const handleHomeClick = () => {
+  dispatch(setSearchQuery('')); // 🔄 clear search query
+};
+
+
+
   return (
     <footer className="footer-container">
       <div className="footer-content">
         {/* Column 1: Logo & Contact */}
         <div className="footer-column">
+          <Link to={'/'} onClick={handleHomeClick} > 
           <div className="footer-logo">
             <img
               src="https://cdn-icons-png.flaticon.com/512/135/135620.png"
               alt="logo"
             />
             <div className="footer-brand">Fresh Food</div>
+            
           </div>
+          </Link>
           <ul className="footer-contact">
-            <li><MdLanguage /> <span>www.freshfood.com</span></li>
-            <li><MdEmail /> <span>help@freshfood.com</span></li>
-            <li><MdPhone /> <span>+8801234567890</span></li>
+            <li><MdLanguage /> <span>www.Gauravfood.com</span></li>
+            <li><MdEmail /> <span>help@Gauravfood.com</span></li>
+            <li><MdPhone /> <span>+91-8109107318</span></li>
           </ul>
         </div>
 
@@ -47,11 +61,11 @@ const Footer = () => {
           </ul>
           <div className="footer-apps">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Available_on_the_App_Store_(black)_SVG.svg"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Download_on_the_App_Store_RGB_blk.svg/512px-Download_on_the_App_Store_RGB_blk.svg.png"
               alt="App Store"
             />
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1920px-Google_Play_Store_badge_EN.svg.png"
               alt="Play Store"
             />
           </div>
@@ -59,7 +73,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        © 2002 - 2025 Fresh Food, LLC. All Rights Reserved.
+        © 2025 - 2026 Gaurav Food, LLC. All Rights Reserved.
       </div>
     </footer>
   );

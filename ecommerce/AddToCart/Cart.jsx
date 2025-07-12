@@ -1,23 +1,35 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
- import { removeFromCart } from '../reduxToolkit/cartSlice';
+ import { removeFromCart ,clearCart } from '../reduxToolkit/cartSlice';
 import './Cart.css';
+import { toast } from 'react-toastify';
+
 
 const Cart = () => {
   const items = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
+
+  //remove products from cart..
   const handleRemove = (id) => {
-    
-    
-    dispatch(removeFromCart(id));
+       dispatch(removeFromCart(id));
   };
+
+  //calculate total price of items
+  const totalPrice = items.reduce((total, item) => total + item.price, 0);
+
+// Buy now functionality
+  const handleBuyNow = () => {
+    dispatch(clearCart());  
+    toast.success('Your order has been placed successfully!');
+  };
+
 
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
       {items.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className="empty-cart">Your cart is empty.</p>
       ) : (
         <div className="cart-items">
           {items.map((item, id) => (
@@ -30,7 +42,13 @@ const Cart = () => {
               </div>
             </div>
           ))}
-          <button className="buy-now">Buy Now</button>
+
+          <div className="cart-total">
+            <h3>Total: ₹{totalPrice}</h3>
+          </div>
+
+
+          <button className="buy-now"  onClick={handleBuyNow}>Buy Now</button>
         </div>
       )}
     </div>
