@@ -88,7 +88,9 @@ useEffect(() => {
           </div>
 
           <div className="icon-circle">
-            <FaUser />
+            <Link to="/register" className="icon-circle">
+    <FaUser />
+  </Link>
           </div>
 
           {/* Mobile Cart Icon */}
@@ -115,6 +117,14 @@ useEffect(() => {
     <span className="cart-badge">{cartCount}</span>
   </Link>
 </div>
+
+<div className="mobile-user mobile-only">
+  <Link to="/register" className="icon-circle">
+    <FaUser />
+  </Link>
+</div>
+
+
 </div>
 
       {/* Mobile Menu */}

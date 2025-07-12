@@ -10,6 +10,7 @@ import Home from '../pages/Home'
 import Cart from '../AddToCart/Cart'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import RegistrationPage from '../component/RegistrationPage'
 
 
 
@@ -29,6 +30,7 @@ const App = () => {
 <Route path="/categories/drinks" element={<Drinks/>} />
 <Route path="/categories/sweets" element={<Sweets/>} />
 <Route path="/cart" element={<Cart />}/>
+<Route path='/register' element={<RegistrationPage/>}/>
 
 
 
