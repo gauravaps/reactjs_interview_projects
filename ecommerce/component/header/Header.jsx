@@ -115,8 +115,7 @@ useEffect(() => {
     <span className="cart-badge">{cartCount}</span>
   </Link>
 </div>
-
-      </div>
+</div>
 
       {/* Mobile Menu */}
       {menuOpen && (
@@ -157,6 +156,11 @@ useEffect(() => {
 
         </div>
       )}
+
+
+
+
+
     </header>
   );
 };
